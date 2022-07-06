@@ -65,6 +65,8 @@ def register(request):
 def runQuery(request):
     if request.data['name'] == User.objects.filter(username=request.data['name']).values('username')[0]['username']:
         data = runSqlQuery(request.data['query'], request.data['name'])
+        if data == None:
+            return Response({'message':'None'})
         if data:
             return Response(data)
         else:

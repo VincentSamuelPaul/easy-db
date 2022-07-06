@@ -9,8 +9,11 @@ def runSqlQuery(query, name):
     path = path + '/backend/databases'
     db = s3.connect(f'{os.getcwd()}/databases/{name}.db')
     cursor = db.cursor()
-    if cursor.execute(query):
-        db.commit()
-        return cursor.fetchall()
+    if query == '':
+        return None
     else:
-        return False
+        if cursor.execute(query):
+            db.commit()
+            return cursor.fetchall()
+        else:
+            return False
