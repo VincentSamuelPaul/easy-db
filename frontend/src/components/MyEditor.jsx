@@ -62,7 +62,7 @@ const MyEditor = () => {
             <div className='text'>
                 <h3 style={{fontSize:`${font*3}px`}}>USE DATABASE '{name}';</h3>
                 <textarea value={query} onChange={(e) => setQuery(e.target.value)} style={{fontSize:`${font*3}px`}} autoFocus='on' placeholder='$ start querying...'></textarea>
-                { message ? <h3>{message}</h3> : '' }
+                { message ? <h3 className='message'>Status: {message}</h3> : <h3 className='message1'>Status: success</h3> }
                 <div className='output'>
                     <p>Result:</p>
                     

@@ -96,6 +96,28 @@
     border-radius: 10px;
 }
 
+.message {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #17181f;
+    text-align: center;
+    color: red;
+}
+
+.message1 {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #17181f;
+    text-align: center;
+    color: #4285F4;
+}
+
 .run {
     background-color: transparent;
 }
