@@ -63,13 +63,16 @@ def register(request):
 
 @api_view(['POST'])
 def runQuery(request):
-    if request.data['name'] == User.objects.filter(username=request.data['name']).values('username')[0]['username']:
-        data = runSqlQuery(request.data['query'], request.data['name'])
-        if data == None:
-            return Response({'message':'None'})
-        if data:
-            return Response(data)
+    try:
+        if request.data['name'] == User.objects.filter(username=request.data['name']).values('username')[0]['username']:
+            data = runSqlQuery(request.data['query'], request.data['name'])
+            if data == None:
+                return Response({'message':'Invalid Query...'})
+            if data:
+                return Response(data)
+            else:
+                return Response({'message':'Query Executed'})
         else:
-            return Response({'message':'Query Executed'})
-    else:
+            return Response({'message':'Invalid Query...'})
+    except:
         return Response({'message':'Invalid Query...'})

@@ -94,6 +94,7 @@
     padding-right: 10px;
     cursor: pointer;
     border-radius: 10px;
+    background-color: #4285F4;
 }
 
 .message {
@@ -158,6 +159,49 @@
     text-align: center;
     font-size: 25px;
     margin-top: 25px;
+}
+
+.one {
+    display: flex;
+    flex-direction: column;
+    background-color: #17181f;
+    color: #4285F4;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.row,
+.row>p {
+    display: flex;
+    flex-direction: row;
+    background-color: #17181f;
+    color: #4285F4;
+    text-align: center;
+}
+
+.row>p {
+    padding: 2px;
+    border: solid whitesmoke;
+    border-width: 0.01px;
+    font-size: 15px;
+    min-width: auto;
+    min-height: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: '...';
+}
+
+.editor>h3 {
+    text-align: center;
+    background-color: transparent;
+    color: whitesmoke;
+    margin-bottom: 30px;
+}
+
+.row {
+    width: 100%;
+    text-align: center;
 }
 
 @media screen and (max-width:1000px) {

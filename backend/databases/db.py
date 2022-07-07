@@ -12,6 +12,8 @@ def runSqlQuery(query, name):
     if query == '':
         return None
     else:
+        if cursor.fetchall() == '' or cursor.fetchall() == None:
+            return cursor.execute(query)
         if cursor.execute(query):
             db.commit()
             return cursor.fetchall()
